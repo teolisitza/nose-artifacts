@@ -7,7 +7,7 @@ tests_require = [
 
 setup(
     name='nose-artifacts',
-    version='0.0.1',
+    version='0.1.0',
     author='Teo Lisitza',
     author_email='teo@cumulusnetworks.com',
     description='Give tests a place for artifacts',
@@ -19,7 +19,7 @@ setup(
     ],
     entry_points={
        'nose.plugins.0.10': [
-            'nose_artifacts = nose_json.plugin:ArtifactsPlugin'
+            'nose_artifacts = nose_artifacts.plugin:ArtifactsPlugin'
         ]
     },
     license='Apache License 2.0',
