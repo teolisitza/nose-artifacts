@@ -82,13 +82,17 @@ class ArtifactsPlugin(Plugin):
         but if that already exists, then we'll try
         <ROOT_ARTIFACT_DIR>/<TEST_ID>.1, just like log files. """
 
+        # Make a copy of original path to keep trying new
+        # names to find one that does not exist.
         path = orig_path = os.path.join(self.artifact_dir, test.id())
+
         if os.path.exists(path):
             test_id = 1
-            path += '%s.%d' % (orig_path, test_id)
+            path = '%s.%d' % (orig_path, test_id)
             while os.path.exists(path):
                 test_id += 1
-                path += '%s.%d' % (orig_path, test_id)
+                path = '%s.%d' % (orig_path, test_id)
+
         os.makedirs(path)
 
         cfg = testconfig.config

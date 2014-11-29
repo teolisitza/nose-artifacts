@@ -7,7 +7,7 @@ tests_require = [
 
 setup(
     name='nose-artifacts',
-    version='0.1.0',
+    version='0.1.1',
     author='Teo Lisitza',
     author_email='teo@cumulusnetworks.com',
     description='Give tests a place for artifacts',
